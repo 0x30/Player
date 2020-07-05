@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		154A22B400AD85BFCC045795 /* Pods_VideoThumbnail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B0F0E2871498937FBCBB95 /* Pods_VideoThumbnail.framework */; };
+		67B12D5987397060C83D93B7 /* Pods_CoeverPlayer_CoeverPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4A78CB8F11F33E6295256B /* Pods_CoeverPlayer_CoeverPlayerUITests.framework */; };
+		80FB4E447CC1A71E76C6255A /* Pods_CoeverPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CDB9DDA2402BCEE0A4F158 /* Pods_CoeverPlayer.framework */; };
 		8649A46324B1E88E009B3439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46224B1E88E009B3439 /* AppDelegate.swift */; };
 		8649A46524B1E88E009B3439 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46424B1E88E009B3439 /* DocumentBrowserViewController.swift */; };
 		8649A46724B1E88E009B3439 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46624B1E88E009B3439 /* DocumentViewController.swift */; };
@@ -16,6 +19,10 @@
 		8649A47124B1E88F009B3439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8649A46F24B1E88F009B3439 /* LaunchScreen.storyboard */; };
 		8649A47C24B1E88F009B3439 /* CoeverPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A47B24B1E88F009B3439 /* CoeverPlayerTests.swift */; };
 		8649A48724B1E88F009B3439 /* CoeverPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A48624B1E88F009B3439 /* CoeverPlayerUITests.swift */; };
+		8649A49B24B1F3D7009B3439 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8649A49A24B1F3D7009B3439 /* QuickLookThumbnailing.framework */; };
+		8649A49E24B1F3D7009B3439 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */; };
+		8649A4A224B1F3D7009B3439 /* VideoThumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8649A49824B1F3D7009B3439 /* VideoThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D38574F8985E1222413743FC /* Pods_CoeverPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6032D0F8DC440EA40F9F451 /* Pods_CoeverPlayerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,9 +40,37 @@
 			remoteGlobalIDString = 8649A45E24B1E88E009B3439;
 			remoteInfo = CoeverPlayer;
 		};
+		8649A4A024B1F3D7009B3439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8649A45724B1E88E009B3439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8649A49724B1F3D7009B3439;
+			remoteInfo = VideoThumbnail;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8649A4A624B1F3D7009B3439 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8649A4A224B1F3D7009B3439 /* VideoThumbnail.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00FDD9A54D5AC8F8560E2388 /* Pods-CoeverPlayer-CoeverPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayer-CoeverPlayerUITests.release.xcconfig"; path = "Target Support Files/Pods-CoeverPlayer-CoeverPlayerUITests/Pods-CoeverPlayer-CoeverPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		071B88531339CC1699C8F05F /* Pods-CoeverPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayerTests.debug.xcconfig"; path = "Target Support Files/Pods-CoeverPlayerTests/Pods-CoeverPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2523DABB9CC9AA00CBEB1F11 /* Pods-VideoThumbnail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoThumbnail.debug.xcconfig"; path = "Target Support Files/Pods-VideoThumbnail/Pods-VideoThumbnail.debug.xcconfig"; sourceTree = "<group>"; };
+		3A011DEF3460C37A6B3A9DDF /* Pods-VideoThumbnail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoThumbnail.release.xcconfig"; path = "Target Support Files/Pods-VideoThumbnail/Pods-VideoThumbnail.release.xcconfig"; sourceTree = "<group>"; };
+		4BC6A02FDDDD4DE364B90964 /* Pods-CoeverPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayerTests.release.xcconfig"; path = "Target Support Files/Pods-CoeverPlayerTests/Pods-CoeverPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		4E85045F54442A2EFA2CF62C /* Pods-CoeverPlayer-CoeverPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayer-CoeverPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoeverPlayer-CoeverPlayerUITests/Pods-CoeverPlayer-CoeverPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		55B0F0E2871498937FBCBB95 /* Pods_VideoThumbnail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoThumbnail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8649A45F24B1E88E009B3439 /* CoeverPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoeverPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8649A46224B1E88E009B3439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8649A46424B1E88E009B3439 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +86,15 @@
 		8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoeverPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8649A48624B1E88F009B3439 /* CoeverPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoeverPlayerUITests.swift; sourceTree = "<group>"; };
 		8649A48824B1E88F009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8649A49824B1F3D7009B3439 /* VideoThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VideoThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649A49A24B1F3D7009B3439 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
+		8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
+		8649A49F24B1F3D7009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D4A78CB8F11F33E6295256B /* Pods_CoeverPlayer_CoeverPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoeverPlayer_CoeverPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CDB9DDA2402BCEE0A4F158 /* Pods_CoeverPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoeverPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95C3983CC5DC220D1AA5CA1 /* Pods-CoeverPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayer.release.xcconfig"; path = "Target Support Files/Pods-CoeverPlayer/Pods-CoeverPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		B054A86D9FB5EE3AE2CBFD64 /* Pods-CoeverPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoeverPlayer.debug.xcconfig"; path = "Target Support Files/Pods-CoeverPlayer/Pods-CoeverPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		C6032D0F8DC440EA40F9F451 /* Pods_CoeverPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoeverPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80FB4E447CC1A71E76C6255A /* Pods_CoeverPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38574F8985E1222413743FC /* Pods_CoeverPlayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,19 +118,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B12D5987397060C83D93B7 /* Pods_CoeverPlayer_CoeverPlayerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A49524B1F3D7009B3439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A49B24B1F3D7009B3439 /* QuickLookThumbnailing.framework in Frameworks */,
+				154A22B400AD85BFCC045795 /* Pods_VideoThumbnail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1B501109739111F1BF11AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B054A86D9FB5EE3AE2CBFD64 /* Pods-CoeverPlayer.debug.xcconfig */,
+				A95C3983CC5DC220D1AA5CA1 /* Pods-CoeverPlayer.release.xcconfig */,
+				4E85045F54442A2EFA2CF62C /* Pods-CoeverPlayer-CoeverPlayerUITests.debug.xcconfig */,
+				00FDD9A54D5AC8F8560E2388 /* Pods-CoeverPlayer-CoeverPlayerUITests.release.xcconfig */,
+				071B88531339CC1699C8F05F /* Pods-CoeverPlayerTests.debug.xcconfig */,
+				4BC6A02FDDDD4DE364B90964 /* Pods-CoeverPlayerTests.release.xcconfig */,
+				2523DABB9CC9AA00CBEB1F11 /* Pods-VideoThumbnail.debug.xcconfig */,
+				3A011DEF3460C37A6B3A9DDF /* Pods-VideoThumbnail.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8649A45624B1E88E009B3439 = {
 			isa = PBXGroup;
 			children = (
 				8649A46124B1E88E009B3439 /* CoeverPlayer */,
 				8649A47A24B1E88F009B3439 /* CoeverPlayerTests */,
 				8649A48524B1E88F009B3439 /* CoeverPlayerUITests */,
+				8649A49C24B1F3D7009B3439 /* VideoThumbnail */,
+				8649A49924B1F3D7009B3439 /* Frameworks */,
 				8649A46024B1E88E009B3439 /* Products */,
+				6D1B501109739111F1BF11AF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +169,7 @@
 				8649A45F24B1E88E009B3439 /* CoeverPlayer.app */,
 				8649A47724B1E88F009B3439 /* CoeverPlayerTests.xctest */,
 				8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */,
+				8649A49824B1F3D7009B3439 /* VideoThumbnail.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +207,27 @@
 			path = CoeverPlayerUITests;
 			sourceTree = "<group>";
 		};
+		8649A49924B1F3D7009B3439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8649A49A24B1F3D7009B3439 /* QuickLookThumbnailing.framework */,
+				A8CDB9DDA2402BCEE0A4F158 /* Pods_CoeverPlayer.framework */,
+				8D4A78CB8F11F33E6295256B /* Pods_CoeverPlayer_CoeverPlayerUITests.framework */,
+				C6032D0F8DC440EA40F9F451 /* Pods_CoeverPlayerTests.framework */,
+				55B0F0E2871498937FBCBB95 /* Pods_VideoThumbnail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8649A49C24B1F3D7009B3439 /* VideoThumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */,
+				8649A49F24B1F3D7009B3439 /* Info.plist */,
+			);
+			path = VideoThumbnail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,13 +235,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8649A48B24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayer" */;
 			buildPhases = (
+				0FC360B4CD3D3728F487CCC3 /* [CP] Check Pods Manifest.lock */,
 				8649A45B24B1E88E009B3439 /* Sources */,
 				8649A45C24B1E88E009B3439 /* Frameworks */,
 				8649A45D24B1E88E009B3439 /* Resources */,
+				8649A4A624B1F3D7009B3439 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8649A4A124B1F3D7009B3439 /* PBXTargetDependency */,
 			);
 			name = CoeverPlayer;
 			productName = CoeverPlayer;
@@ -155,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8649A48E24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerTests" */;
 			buildPhases = (
+				C544884FDB24CBA2D291378B /* [CP] Check Pods Manifest.lock */,
 				8649A47324B1E88F009B3439 /* Sources */,
 				8649A47424B1E88F009B3439 /* Frameworks */,
 				8649A47524B1E88F009B3439 /* Resources */,
@@ -173,6 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8649A49124B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerUITests" */;
 			buildPhases = (
+				07B7D92A1685B84C0E2CABFE /* [CP] Check Pods Manifest.lock */,
 				8649A47E24B1E88F009B3439 /* Sources */,
 				8649A47F24B1E88F009B3439 /* Frameworks */,
 				8649A48024B1E88F009B3439 /* Resources */,
@@ -186,6 +288,24 @@
 			productName = CoeverPlayerUITests;
 			productReference = 8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8649A49724B1F3D7009B3439 /* VideoThumbnail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8649A4A324B1F3D7009B3439 /* Build configuration list for PBXNativeTarget "VideoThumbnail" */;
+			buildPhases = (
+				609ADED2D6E6CA7A70D67C8D /* [CP] Check Pods Manifest.lock */,
+				8649A49424B1F3D7009B3439 /* Sources */,
+				8649A49524B1F3D7009B3439 /* Frameworks */,
+				8649A49624B1F3D7009B3439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoThumbnail;
+			productName = VideoThumbnail;
+			productReference = 8649A49824B1F3D7009B3439 /* VideoThumbnail.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -208,6 +328,9 @@
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = 8649A45E24B1E88E009B3439;
 					};
+					8649A49724B1F3D7009B3439 = {
+						CreatedOnToolsVersion = 11.5;
+					};
 				};
 			};
 			buildConfigurationList = 8649A45A24B1E88E009B3439 /* Build configuration list for PBXProject "CoeverPlayer" */;
@@ -226,6 +349,7 @@
 				8649A45E24B1E88E009B3439 /* CoeverPlayer */,
 				8649A47624B1E88F009B3439 /* CoeverPlayerTests */,
 				8649A48124B1E88F009B3439 /* CoeverPlayerUITests */,
+				8649A49724B1F3D7009B3439 /* VideoThumbnail */,
 			);
 		};
 /* End PBXProject section */
@@ -255,7 +379,105 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8649A49624B1F3D7009B3439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07B7D92A1685B84C0E2CABFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoeverPlayer-CoeverPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FC360B4CD3D3728F487CCC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoeverPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		609ADED2D6E6CA7A70D67C8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoThumbnail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C544884FDB24CBA2D291378B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoeverPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8649A45B24B1E88E009B3439 /* Sources */ = {
@@ -285,6 +507,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8649A49424B1F3D7009B3439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A49E24B1F3D7009B3439 /* ThumbnailProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -297,6 +527,11 @@
 			isa = PBXTargetDependency;
 			target = 8649A45E24B1E88E009B3439 /* CoeverPlayer */;
 			targetProxy = 8649A48324B1E88F009B3439 /* PBXContainerItemProxy */;
+		};
+		8649A4A124B1F3D7009B3439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8649A49724B1F3D7009B3439 /* VideoThumbnail */;
+			targetProxy = 8649A4A024B1F3D7009B3439 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -436,7 +671,9 @@
 		};
 		8649A48C24B1E88F009B3439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B054A86D9FB5EE3AE2CBFD64 /* Pods-CoeverPlayer.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CAY8P2B9Z3;
@@ -454,7 +691,9 @@
 		};
 		8649A48D24B1E88F009B3439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A95C3983CC5DC220D1AA5CA1 /* Pods-CoeverPlayer.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CAY8P2B9Z3;
@@ -472,6 +711,7 @@
 		};
 		8649A48F24B1E88F009B3439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071B88531339CC1699C8F05F /* Pods-CoeverPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +734,7 @@
 		};
 		8649A49024B1E88F009B3439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BC6A02FDDDD4DE364B90964 /* Pods-CoeverPlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +757,7 @@
 		};
 		8649A49224B1E88F009B3439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E85045F54442A2EFA2CF62C /* Pods-CoeverPlayer-CoeverPlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +778,7 @@
 		};
 		8649A49324B1E88F009B3439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00FDD9A54D5AC8F8560E2388 /* Pods-CoeverPlayer-CoeverPlayerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +794,46 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CoeverPlayer;
+			};
+			name = Release;
+		};
+		8649A4A424B1F3D7009B3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2523DABB9CC9AA00CBEB1F11 /* Pods-VideoThumbnail.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = VideoThumbnail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayer.VideoThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8649A4A524B1F3D7009B3439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A011DEF3460C37A6B3A9DDF /* Pods-VideoThumbnail.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = VideoThumbnail/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayer.VideoThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -589,6 +872,15 @@
 			buildConfigurations = (
 				8649A49224B1E88F009B3439 /* Debug */,
 				8649A49324B1E88F009B3439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8649A4A324B1F3D7009B3439 /* Build configuration list for PBXNativeTarget "VideoThumbnail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8649A4A424B1F3D7009B3439 /* Debug */,
+				8649A4A524B1F3D7009B3439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
