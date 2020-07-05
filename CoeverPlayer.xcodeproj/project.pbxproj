@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8649A46324B1E88E009B3439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46224B1E88E009B3439 /* AppDelegate.swift */; };
+		8649A46524B1E88E009B3439 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46424B1E88E009B3439 /* DocumentBrowserViewController.swift */; };
+		8649A46724B1E88E009B3439 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46624B1E88E009B3439 /* DocumentViewController.swift */; };
+		8649A46924B1E88E009B3439 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A46824B1E88E009B3439 /* Document.swift */; };
+		8649A46C24B1E88E009B3439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8649A46A24B1E88E009B3439 /* Main.storyboard */; };
+		8649A46E24B1E88F009B3439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8649A46D24B1E88F009B3439 /* Assets.xcassets */; };
+		8649A47124B1E88F009B3439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8649A46F24B1E88F009B3439 /* LaunchScreen.storyboard */; };
+		8649A47C24B1E88F009B3439 /* CoeverPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A47B24B1E88F009B3439 /* CoeverPlayerTests.swift */; };
+		8649A48724B1E88F009B3439 /* CoeverPlayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A48624B1E88F009B3439 /* CoeverPlayerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8649A47824B1E88F009B3439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8649A45724B1E88E009B3439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8649A45E24B1E88E009B3439;
+			remoteInfo = CoeverPlayer;
+		};
+		8649A48324B1E88F009B3439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8649A45724B1E88E009B3439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8649A45E24B1E88E009B3439;
+			remoteInfo = CoeverPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8649A45F24B1E88E009B3439 /* CoeverPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoeverPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649A46224B1E88E009B3439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8649A46424B1E88E009B3439 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		8649A46624B1E88E009B3439 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
+		8649A46824B1E88E009B3439 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		8649A46B24B1E88E009B3439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8649A46D24B1E88F009B3439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8649A47024B1E88F009B3439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8649A47224B1E88F009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8649A47724B1E88F009B3439 /* CoeverPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoeverPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649A47B24B1E88F009B3439 /* CoeverPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoeverPlayerTests.swift; sourceTree = "<group>"; };
+		8649A47D24B1E88F009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoeverPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8649A48624B1E88F009B3439 /* CoeverPlayerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoeverPlayerUITests.swift; sourceTree = "<group>"; };
+		8649A48824B1E88F009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8649A45C24B1E88E009B3439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A47424B1E88F009B3439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A47F24B1E88F009B3439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8649A45624B1E88E009B3439 = {
+			isa = PBXGroup;
+			children = (
+				8649A46124B1E88E009B3439 /* CoeverPlayer */,
+				8649A47A24B1E88F009B3439 /* CoeverPlayerTests */,
+				8649A48524B1E88F009B3439 /* CoeverPlayerUITests */,
+				8649A46024B1E88E009B3439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8649A46024B1E88E009B3439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8649A45F24B1E88E009B3439 /* CoeverPlayer.app */,
+				8649A47724B1E88F009B3439 /* CoeverPlayerTests.xctest */,
+				8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8649A46124B1E88E009B3439 /* CoeverPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8649A46224B1E88E009B3439 /* AppDelegate.swift */,
+				8649A46424B1E88E009B3439 /* DocumentBrowserViewController.swift */,
+				8649A46624B1E88E009B3439 /* DocumentViewController.swift */,
+				8649A46824B1E88E009B3439 /* Document.swift */,
+				8649A46A24B1E88E009B3439 /* Main.storyboard */,
+				8649A46D24B1E88F009B3439 /* Assets.xcassets */,
+				8649A46F24B1E88F009B3439 /* LaunchScreen.storyboard */,
+				8649A47224B1E88F009B3439 /* Info.plist */,
+			);
+			path = CoeverPlayer;
+			sourceTree = "<group>";
+		};
+		8649A47A24B1E88F009B3439 /* CoeverPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8649A47B24B1E88F009B3439 /* CoeverPlayerTests.swift */,
+				8649A47D24B1E88F009B3439 /* Info.plist */,
+			);
+			path = CoeverPlayerTests;
+			sourceTree = "<group>";
+		};
+		8649A48524B1E88F009B3439 /* CoeverPlayerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8649A48624B1E88F009B3439 /* CoeverPlayerUITests.swift */,
+				8649A48824B1E88F009B3439 /* Info.plist */,
+			);
+			path = CoeverPlayerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8649A45E24B1E88E009B3439 /* CoeverPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8649A48B24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayer" */;
+			buildPhases = (
+				8649A45B24B1E88E009B3439 /* Sources */,
+				8649A45C24B1E88E009B3439 /* Frameworks */,
+				8649A45D24B1E88E009B3439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoeverPlayer;
+			productName = CoeverPlayer;
+			productReference = 8649A45F24B1E88E009B3439 /* CoeverPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8649A47624B1E88F009B3439 /* CoeverPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8649A48E24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerTests" */;
+			buildPhases = (
+				8649A47324B1E88F009B3439 /* Sources */,
+				8649A47424B1E88F009B3439 /* Frameworks */,
+				8649A47524B1E88F009B3439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8649A47924B1E88F009B3439 /* PBXTargetDependency */,
+			);
+			name = CoeverPlayerTests;
+			productName = CoeverPlayerTests;
+			productReference = 8649A47724B1E88F009B3439 /* CoeverPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8649A48124B1E88F009B3439 /* CoeverPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8649A49124B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerUITests" */;
+			buildPhases = (
+				8649A47E24B1E88F009B3439 /* Sources */,
+				8649A47F24B1E88F009B3439 /* Frameworks */,
+				8649A48024B1E88F009B3439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8649A48424B1E88F009B3439 /* PBXTargetDependency */,
+			);
+			name = CoeverPlayerUITests;
+			productName = CoeverPlayerUITests;
+			productReference = 8649A48224B1E88F009B3439 /* CoeverPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8649A45724B1E88E009B3439 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = demo;
+				TargetAttributes = {
+					8649A45E24B1E88E009B3439 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					8649A47624B1E88F009B3439 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 8649A45E24B1E88E009B3439;
+					};
+					8649A48124B1E88F009B3439 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 8649A45E24B1E88E009B3439;
+					};
+				};
+			};
+			buildConfigurationList = 8649A45A24B1E88E009B3439 /* Build configuration list for PBXProject "CoeverPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8649A45624B1E88E009B3439;
+			productRefGroup = 8649A46024B1E88E009B3439 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8649A45E24B1E88E009B3439 /* CoeverPlayer */,
+				8649A47624B1E88F009B3439 /* CoeverPlayerTests */,
+				8649A48124B1E88F009B3439 /* CoeverPlayerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8649A45D24B1E88E009B3439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A47124B1E88F009B3439 /* LaunchScreen.storyboard in Resources */,
+				8649A46E24B1E88F009B3439 /* Assets.xcassets in Resources */,
+				8649A46C24B1E88E009B3439 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A47524B1E88F009B3439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A48024B1E88F009B3439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8649A45B24B1E88E009B3439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A46924B1E88E009B3439 /* Document.swift in Sources */,
+				8649A46724B1E88E009B3439 /* DocumentViewController.swift in Sources */,
+				8649A46524B1E88E009B3439 /* DocumentBrowserViewController.swift in Sources */,
+				8649A46324B1E88E009B3439 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A47324B1E88F009B3439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A47C24B1E88F009B3439 /* CoeverPlayerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8649A47E24B1E88F009B3439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8649A48724B1E88F009B3439 /* CoeverPlayerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8649A47924B1E88F009B3439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8649A45E24B1E88E009B3439 /* CoeverPlayer */;
+			targetProxy = 8649A47824B1E88F009B3439 /* PBXContainerItemProxy */;
+		};
+		8649A48424B1E88F009B3439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8649A45E24B1E88E009B3439 /* CoeverPlayer */;
+			targetProxy = 8649A48324B1E88F009B3439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8649A46A24B1E88E009B3439 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8649A46B24B1E88E009B3439 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8649A46F24B1E88F009B3439 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8649A47024B1E88F009B3439 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8649A48924B1E88F009B3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8649A48A24B1E88F009B3439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8649A48C24B1E88F009B3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8649A48D24B1E88F009B3439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8649A48F24B1E88F009B3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoeverPlayer.app/CoeverPlayer";
+			};
+			name = Debug;
+		};
+		8649A49024B1E88F009B3439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoeverPlayer.app/CoeverPlayer";
+			};
+			name = Release;
+		};
+		8649A49224B1E88F009B3439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoeverPlayer;
+			};
+			name = Debug;
+		};
+		8649A49324B1E88F009B3439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CAY8P2B9Z3;
+				INFOPLIST_FILE = CoeverPlayerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = demo.loan.CoeverPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoeverPlayer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8649A45A24B1E88E009B3439 /* Build configuration list for PBXProject "CoeverPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8649A48924B1E88F009B3439 /* Debug */,
+				8649A48A24B1E88F009B3439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8649A48B24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8649A48C24B1E88F009B3439 /* Debug */,
+				8649A48D24B1E88F009B3439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8649A48E24B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8649A48F24B1E88F009B3439 /* Debug */,
+				8649A49024B1E88F009B3439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8649A49124B1E88F009B3439 /* Build configuration list for PBXNativeTarget "CoeverPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8649A49224B1E88F009B3439 /* Debug */,
+				8649A49324B1E88F009B3439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8649A45724B1E88E009B3439 /* Project object */;
+}
