@@ -11,24 +11,30 @@ import QuickLookThumbnailing
 
 class ThumbnailProvider: QLThumbnailProvider {
     
-    typealias Block = (QLThumbnailReply?, Error?) -> Void
-    
-    private var handler: Block?
-    
-    private var request: QLFileThumbnailRequest?
-    
     override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
         
-        self.handler = handler
-        
-        self.request = request
-        
-        print(request.fileURL,"?????")
-        
-        VLCMediaThumbnailer(media: VLCMedia(url: request.fileURL), andDelegate: self).fetchThumbnail()
+        VLCMediaThumbnailer(media: VLCMedia(url: request.fileURL), andDelegate: VLCMediaThumbnailerDelegateProxy(block: { (image) in
+                    
+            guard let image = image else {
+                handler(nil, NSError(domain: "image error", code: 0, userInfo: nil))
+                return
+            }
+            
+            let thumbnailImage = UIImage(cgImage: image)
+            
+            let result = self.calculater(request: request, image: thumbnailImage)
+                            
+            let reply = QLThumbnailReply(contextSize: result.contextSize, currentContextDrawing: {
+                thumbnailImage.draw(in: result.drawRect)
+                return true
+            })
+                            
+            handler(reply, nil)
+            
+        })).fetchThumbnail()
     }
     
-    func calculater(request: QLFileThumbnailRequest,image: UIImage) -> (contextSize: CGSize,drawRect:CGRect) {
+    private func calculater(request: QLFileThumbnailRequest,image: UIImage) -> (contextSize: CGSize,drawRect:CGRect) {
 
         let maximumSize = request.maximumSize
         let imageSize = image.size
@@ -55,33 +61,36 @@ class ThumbnailProvider: QLThumbnailProvider {
     }
 }
 
-extension ThumbnailProvider: VLCMediaThumbnailerDelegate{
+
+class VLCMediaThumbnailerDelegateProxy: NSObject, VLCMediaThumbnailerDelegate {
+    
+    typealias VLCMediaThumbnailerDelegateProxyBlock = (_ image: CGImage?) -> Void
+    
+    private let block: VLCMediaThumbnailerDelegateProxyBlock
+    
+    /// 自管理 内存
+    private var _self: VLCMediaThumbnailerDelegateProxy?
+    
+    init(block: @escaping VLCMediaThumbnailerDelegateProxyBlock) {
+        
+        self.block = block
+        
+        super.init()
+        
+        _self = self
+    }
     
     func mediaThumbnailerDidTimeOut(_ mediaThumbnailer: VLCMediaThumbnailer!) {
         
-        self.handler?(nil, NSError(domain: "time out", code: 0, userInfo: nil))
+        self.block(nil)
+        
+        _self = nil
     }
     
     func mediaThumbnailer(_ mediaThumbnailer: VLCMediaThumbnailer!, didFinishThumbnail thumbnail: CGImage!) {
         
-        print("生成缩略图?????")
+        self.block(thumbnail)
         
-        DispatchQueue.main.async { [weak self] in
-            
-            let thumbnailImage = UIImage(cgImage: thumbnail)
-
-            if let request = self?.request, let result = self?.calculater(request: request, image: thumbnailImage) {
-                
-                let reply = QLThumbnailReply(contextSize: result.contextSize, currentContextDrawing: {
-                    thumbnailImage.draw(in: result.drawRect)
-                    return true
-                })
-                self?.handler?(reply, nil)
-                
-            }else{
-
-                self?.handler?(nil, NSError(domain: "request not exist", code: 0, userInfo: nil))
-            }
-        }
+        _self = nil
     }
 }

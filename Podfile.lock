@@ -1,8 +1,30 @@
 PODS:
   - MobileVLCKit (3.3.13)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - MobileVLCKit (from `http://localhost:3030/MobileVLCKit.podspec.json`)
+  - RxCocoa
+  - RxOptional
+  - RxSwift
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxOptional
+    - RxRelay
+    - RxSwift
+    - SnapKit
 
 EXTERNAL SOURCES:
   MobileVLCKit:
@@ -10,7 +32,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MobileVLCKit: 99df02af13378fb6834cd9815eaf09149784766b
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 93b42f1f95eb6ad295178166fc432940c1fee5d1
+PODFILE CHECKSUM: 7462027fdae737d827ddad5b59e15ac3ad97955d
 
 COCOAPODS: 1.9.1

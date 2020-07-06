@@ -2,6 +2,13 @@
 # platform :ios, '9.0'
 
 def shared_pods
+  pod 'SnapKit'
+
+  pod 'RxCocoa'
+  pod 'RxSwift'
+  
+  pod 'RxOptional'
+  
   pod 'MobileVLCKit', :podspec => 'http://localhost:3030/MobileVLCKit.podspec.json'
 end
 
