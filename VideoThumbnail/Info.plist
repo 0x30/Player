@@ -26,8 +26,27 @@
 			<dict>
 				<key>QLSupportedContentTypes</key>
 				<array>
-					<string>io.iina.avi</string>
+					<string>public.audiovisual-content</string>
+					<string>public.movie</string>
+					<string>public.video</string>
+					<string>public.avi</string>
+					<string>com.microsoft.advanced-systems-format</string>
 					<string>com.microsoft.windows-media-wmv</string>
+					<string>public.3gpp</string>
+					<string>public.3gpp2</string>
+					<string>public.mpeg-4</string>
+					<string>public.mpeg</string>
+					<string>com.microsoft.windows-media-wm</string>
+					<string>com.microsoft.windows-media-wmv</string>
+					<string>com.real.realmedia</string>
+					<string>com.apple.quicktime-movie</string>
+					<string>public.mpeg4</string>
+					<string>org.videolan.mxg</string>
+					<string>org.videolan.webm</string>
+					<string>org.videolan.mxf</string>
+					<string>org.matroska.mkv</string>
+					<string>com.divx.divx</string>
+					<string>org.xiph.ogv</string>
 					<string>com.adobe.flash.video</string>
 				</array>
 			</dict>
