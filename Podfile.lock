@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 24f5784d16e6e848b6aa026c0138f3ba063ae4ac
+PODS:
+  - MobileVLCKit (3.3.13)
+
+DEPENDENCIES:
+  - MobileVLCKit (from `http://localhost:3030/MobileVLCKit.podspec.json`)
+
+EXTERNAL SOURCES:
+  MobileVLCKit:
+    :podspec: http://localhost:3030/MobileVLCKit.podspec.json
+
+SPEC CHECKSUMS:
+  MobileVLCKit: 99df02af13378fb6834cd9815eaf09149784766b
+
+PODFILE CHECKSUM: 93b42f1f95eb6ad295178166fc432940c1fee5d1
 
 COCOAPODS: 1.9.1

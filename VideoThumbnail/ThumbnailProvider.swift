@@ -11,31 +11,77 @@ import QuickLookThumbnailing
 
 class ThumbnailProvider: QLThumbnailProvider {
     
+    typealias Block = (QLThumbnailReply?, Error?) -> Void
+    
+    private var handler: Block?
+    
+    private var request: QLFileThumbnailRequest?
+    
     override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
         
-        // There are three ways to provide a thumbnail through a QLThumbnailReply. Only one of them should be used.
+        self.handler = handler
         
-        // First way: Draw the thumbnail into the current context, set up with UIKit's coordinate system.
-        handler(QLThumbnailReply(contextSize: request.maximumSize, currentContextDrawing: { () -> Bool in
-            // Draw the thumbnail here.
+        self.request = request
+        
+        print(request.fileURL,"?????")
+        
+        VLCMediaThumbnailer(media: VLCMedia(url: request.fileURL), andDelegate: self).fetchThumbnail()
+    }
+    
+    func calculater(request: QLFileThumbnailRequest,image: UIImage) -> (contextSize: CGSize,drawRect:CGRect) {
+
+        let maximumSize = request.maximumSize
+        let imageSize = image.size
+
+        // calculate `newImageSize` and `contextSize` such that the image fits perfectly and respects the constraints
+        var newImageSize = maximumSize
+        var contextSize = maximumSize
+        let aspectRatio = imageSize.height / imageSize.width
+        let proposedHeight = aspectRatio * maximumSize.width
+
+        if proposedHeight <= maximumSize.height {
+            newImageSize.height = proposedHeight
+            contextSize.height = max(proposedHeight.rounded(.down), request.minimumSize.height)
+        } else {
+            newImageSize.width = maximumSize.height / aspectRatio
+            contextSize.width = max(newImageSize.width.rounded(.down), request.minimumSize.width)
+        }
+        
+        return (contextSize,
+                CGRect(x: contextSize.width/2 - newImageSize.width/2,
+                       y: contextSize.height/2 - newImageSize.height/2,
+                       width: newImageSize.width,
+                       height: newImageSize.height))
+    }
+}
+
+extension ThumbnailProvider: VLCMediaThumbnailerDelegate{
+    
+    func mediaThumbnailerDidTimeOut(_ mediaThumbnailer: VLCMediaThumbnailer!) {
+        
+        self.handler?(nil, NSError(domain: "time out", code: 0, userInfo: nil))
+    }
+    
+    func mediaThumbnailer(_ mediaThumbnailer: VLCMediaThumbnailer!, didFinishThumbnail thumbnail: CGImage!) {
+        
+        print("生成缩略图?????")
+        
+        DispatchQueue.main.async { [weak self] in
             
-            // Return true if the thumbnail was successfully drawn inside this block.
-            return true
-        }), nil)
-        
-        /*
-        
-        // Second way: Draw the thumbnail into a context passed to your block, set up with Core Graphics's coordinate system.
-        handler(QLThumbnailReply(contextSize: request.maximumSize, drawing: { (context) -> Bool in
-            // Draw the thumbnail here.
-         
-            // Return true if the thumbnail was successfully drawn inside this block.
-            return true
-        }), nil)
-         
-        // Third way: Set an image file URL.
-        handler(QLThumbnailReply(imageFileURL: Bundle.main.url(forResource: "fileThumbnail", withExtension: "jpg")!), nil)
-        
-        */
+            let thumbnailImage = UIImage(cgImage: thumbnail)
+
+            if let request = self?.request, let result = self?.calculater(request: request, image: thumbnailImage) {
+                
+                let reply = QLThumbnailReply(contextSize: result.contextSize, currentContextDrawing: {
+                    thumbnailImage.draw(in: result.drawRect)
+                    return true
+                })
+                self?.handler?(reply, nil)
+                
+            }else{
+
+                self?.handler?(nil, NSError(domain: "request not exist", code: 0, userInfo: nil))
+            }
+        }
     }
 }
