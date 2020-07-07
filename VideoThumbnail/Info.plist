@@ -48,6 +48,7 @@
 					<string>com.divx.divx</string>
 					<string>org.xiph.ogv</string>
 					<string>com.adobe.flash.video</string>
+					<string>public.aviiiiii</string>
 				</array>
 			</dict>
 			<key>NSExtensionPointIdentifier</key>

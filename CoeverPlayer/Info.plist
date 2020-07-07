@@ -39,6 +39,7 @@
 					<string>com.divx.divx</string>
 					<string>org.xiph.ogv</string>
 					<string>com.adobe.flash.video</string>
+					<string>public.aviiiiii</string>
 				</array>
 			</dict>
 			<dict>
@@ -586,6 +587,35 @@
 					</array>
 				</dict>
 			</dict>
+
+			<dict>
+				<key>UTTypeIdentifier</key>
+				<string>public.aviiiiii</string>
+				<key>UTTypeConformsTo</key>
+				<string>public.movie</string>
+				<key>UTTypeDescription</key>
+				<string>AVI movie</string>
+				<key>UTTypeTagSpecification</key>
+				<dict>
+					<key>com.apple.ostype</key>
+					<array>
+						<string>VfW</string>
+						<string>Vfw</string>
+					</array>
+					<key>public.mime-type</key>
+					<array>
+						<string>video/avi</string>
+						<string>video/msvideo</string>
+						<string>video/x-msvideo</string>
+					</array>
+					<key>public.filename-extension</key>
+					<array>
+						<string>aviiiii</string>
+						<string>vfw</string>
+					</array>
+				</dict>
+			</dict>
+
 		</array>
 		<key>UTImportedTypeDeclarations</key>
 		<array>
