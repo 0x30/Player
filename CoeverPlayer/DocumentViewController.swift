@@ -21,39 +21,24 @@ class DocumentViewController: UIViewController {
     
     let disposebag = DisposeBag()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return UIStatusBarStyle.lightContent
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        pipButton.setImage(AVPictureInPictureController.pictureInPictureButtonStartImage, for: UIControl.State.normal)
-        pipButton.setImage(AVPictureInPictureController.pictureInPictureButtonStopImage, for: UIControl.State.normal)
         
         closeButton.rx.tap.subscribe(onNext: {[weak self] (_) in
             self?.dismiss(animated: true, completion: nil)
             }).disposed(by: disposebag)
         
-        if let url = document?.fileURL {
-
-            let playerView = WZPlayerView(url: url)
-            self.view.insertSubview(playerView, at: 0)
-            playerView.snp.makeConstraints { (maker) in
-                maker.edges.equalTo(UIEdgeInsets.zero)
-            }
-            
-            playerView.play()
-            
-            pipButton.rx.tap.subscribe(onNext: {[weak self] (_) in
-                
-//                playerView.trigger()
-                
-                
-                playerView.seek(to: 3)
-                
-                }).disposed(by: disposebag)
-            
-            
+        let playerView = WZPlayerView(url: document!.fileURL)
+        self.view.insertSubview(playerView, at: 0)
+        playerView.snp.makeConstraints { (maker) in
+            maker.edges.equalTo(UIEdgeInsets.zero)
         }
         
-        
+        playerView.play()
     }
 }

@@ -16,6 +16,7 @@ class WZPlayerView: UIView {
     
     fileprivate let disposeBag = DisposeBag()
     
+    fileprivate let sizePublishRelay = PublishRelay<CGSize>()
     /// 当前的播放速度
     fileprivate let rateBehaviorRelay = BehaviorRelay<Float>(value: 0)
     /// 当前是否正在播放视频
@@ -41,6 +42,8 @@ class WZPlayerView: UIView {
         }else{
             self.configVLCPlayer()
         }
+        
+        self.backgroundColor = UIColor.black
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +65,14 @@ class WZPlayerView: UIView {
             return Float(self.avPlayerLayer?.duration ?? 0)
         }
         return (vlcPlayerLayer?.media.length.value.floatValue ?? 0)/1000
+    }
+    
+    var size: CGSize {
+        if self.avMode {
+            
+            return self.avPlayerLayer?.player?.currentItem?.presentationSize ?? CGSize.zero
+        }
+        return self.vlcPlayerLayer?.media.presentationSize ?? CGSize.zero
     }
     
     /// 开始/恢复 播放
@@ -136,43 +147,56 @@ class WZPlayerView: UIView {
 extension WZPlayerView{
     
     private func configAvPlayer(){
-
-        avPlayerLayer = AVPlayerLayer(player: AVPlayer(url: url))
-        self.layer.addSublayer(avPlayerLayer!)
+        
+        let avItem = AVPlayerItem(url: url)
+        let avPlayer = AVPlayer(playerItem: avItem)
+        let avPlayerLayer = AVPlayerLayer(player: avPlayer)
+        self.layer.addSublayer(avPlayerLayer)
         
         /// 监听 播放器 播放速度
-        let rateObserve = avPlayerLayer?.player?.rx.observe(Float.self, "rate").filterNil()
+        let rateObserve = avPlayer.rx.observe(Float.self, "rate").filterNil()
         
         /// 播放速度绑定
-        rateObserve?
+        rateObserve
             .bind(to: rateBehaviorRelay)
             .disposed(by: disposeBag)
         
         /// 是否播放 绑定
-        rateObserve?
+        rateObserve
             .map{ $0 > 0 }
             .bind(to: self.isPlayingBehaviorRelay)
             .disposed(by: disposeBag)
         
         /// 时间定时 绑定
-        self.avPlayerLayer?.player?.rx
+        avPlayer.rx
             .currentSeconds
             .map{ Float(CMTimeGetSeconds($0)) }
             .bind(to: self.currentSecondsBehaviorRelay)
             .disposed(by: disposeBag)
+        
+        avItem.rx.observe(AVPlayerItem.Status.self, "status")
+            .filter{ $0 == AVPlayerItem.Status.readyToPlay }
+            .map{ _ in avItem.presentationSize }
+            .bind(to: sizePublishRelay)
+            .disposed(by: disposeBag)
+        
+        self.avPlayerLayer = avPlayerLayer
     }
 }
 
 
-extension WZPlayerView {
+extension WZPlayerView: VLCMediaDelegate {
     
     private func configVLCPlayer() {
         
-        vlcPlayerLayer = VLCMediaPlayer()
-        vlcPlayerLayer?.media = VLCMedia(url: url)
-        vlcPlayerLayer?.drawable = self
+        let vlcMedia = VLCMedia(url: url)
+        let vlcPlayerLayer = VLCMediaPlayer()
+        vlcPlayerLayer.media = vlcMedia
+        vlcPlayerLayer.drawable = self
         
-        self.vlcPlayerLayer?.rx.observe(VLCTime.self, "time")
+        vlcMedia.delegate = self
+        
+        vlcPlayerLayer.rx.observe(VLCTime.self, "time")
             .map{ $0?.value }
             .filterNil()
             .map{ $0.floatValue/1000 }
@@ -180,11 +204,19 @@ extension WZPlayerView {
             .bind(to: currentSecondsBehaviorRelay)
             .disposed(by: disposeBag)
         
-        self.vlcPlayerLayer?.rx.observe(Bool.self, "isPlaying")
+        vlcPlayerLayer.rx.observe(Bool.self, "isPlaying")
             .filterNil()
             .distinctUntilChanged()
             .bind(to: self.isPlayingBehaviorRelay)
             .disposed(by: disposeBag)
+        
+        
+        self.vlcPlayerLayer = vlcPlayerLayer
+    }
+    
+    func mediaDidFinishParsing(_ aMedia: VLCMedia) {
+        
+        sizePublishRelay.accept(aMedia.presentationSize)
     }
 }
 
@@ -222,6 +254,10 @@ extension Reactive where Base: WZPlayerView{
     var currentSeconds: Observable<Float>{
         return self.base.currentSecondsBehaviorRelay.asObservable()
     }
+    
+    var size: Observable<CGSize>{
+        return self.base.sizePublishRelay.asObservable()
+    }
 }
 
 
@@ -241,5 +277,32 @@ extension Reactive where Base: AVPlayer{
                 self.base.removeTimeObserver(timeObserver)
             }
         }
+    }
+}
+
+
+extension VLCMedia{
+    
+    var presentationSize: CGSize{
+        
+        var width: Int = 0
+        var height: Int = 0
+        
+        for track in self.tracksInformation {
+            guard let track = track as? [String: Any],
+                let type = track[VLCMediaTracksInformationType] as? String,
+                type == VLCMediaTracksInformationTypeVideo
+                else { continue }
+            
+            if let widthVal = track[VLCMediaTracksInformationVideoWidth] as? Int {
+                width = widthVal
+            }
+            
+            if let heightVal = track[VLCMediaTracksInformationVideoHeight] as? Int {
+                height = heightVal
+            }
+        }
+        
+        return CGSize(width: width, height: height)
     }
 }
