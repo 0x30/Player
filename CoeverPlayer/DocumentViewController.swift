@@ -12,33 +12,54 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+
+
 class DocumentViewController: UIViewController {
-    
-    @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var pipButton: UIButton!
-    
-    var document: UIDocument?
     
     let disposebag = DisposeBag()
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return UIStatusBarStyle.lightContent
+    /// 播放器
+    let playerView: WZPlayerView
+    
+    let finishPublishRelay = PublishRelay<Void>()
+    
+    let button = UIButton(type: UIButton.ButtonType.system)
+    
+    init(with document: UIDocument) {
+        
+        self.playerView = WZPlayerView(url: document.fileURL)
+        
+        super.init(nibName: nil, bundle: nil)
+        
+        self.modalPresentationStyle = .fullScreen
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        closeButton.rx.tap.subscribe(onNext: {[weak self] (_) in
-            self?.dismiss(animated: true, completion: nil)
-            }).disposed(by: disposebag)
+        self.view.backgroundColor = UIColor.systemBackground
         
-        let playerView = WZPlayerView(url: document!.fileURL)
-        self.view.insertSubview(playerView, at: 0)
-        playerView.snp.makeConstraints { (maker) in
+        self.view.addSubview(self.playerView)
+        playerView.snp.remakeConstraints { (maker) in
+            
             maker.edges.equalTo(UIEdgeInsets.zero)
         }
         
-        playerView.play()
+        button.setImage(UIImage(systemName: "xmark"), for: UIControl.State.normal)
+        self.view.addSubview(button)
+        button.snp.remakeConstraints { (maker) in
+            
+            maker.top.equalTo(self.view.snp.topMargin)
+            maker.left.equalTo(self.view.snp.leftMargin)
+        }
+        
+        button.rx.tap.map{ _ in true }.bind(to: rx.dismiss).disposed(by: disposebag)
+        
+        self.playerView.play()
     }
 }

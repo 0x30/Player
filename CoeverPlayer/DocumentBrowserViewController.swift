@@ -6,10 +6,14 @@
 //  Copyright © 2020 demo. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import AVKit
+import RxSwift
 
 class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate, UIViewControllerTransitioningDelegate {
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,42 +67,10 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     // MARK: Document Presentation
     
-    // MARK: Document Presentation
-    
-    var transitionController: UIDocumentBrowserTransitionController?
-    
     func presentDocument(at documentURL: URL) {
         
-        transitionController = transitionController(forDocumentAt: documentURL)
-        
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let documentViewController = storyBoard.instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
-        
-        documentViewController.document = Document(fileURL: documentURL)
-        documentViewController.modalPresentationStyle = .fullScreen
-        
-        documentViewController.transitioningDelegate = self
-        transitionController?.targetView = documentViewController.view
-        
-
-        self.present(documentViewController, animated: true, completion: nil)
-    }
-    
-    // MARK: UIViewControllerTransitioningDelegate
-    
-    func animationController(forPresented presented: UIViewController,
-                             presenting: UIViewController,
-                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        // Since the `UIDocumentBrowserViewController` has been set up to be the transitioning delegate of `DocumentViewController` instances (see
-        // implementation of `presentDocument(at:)`), it is being asked for a transition controller.
-        // Therefore, return the transition controller, that previously was obtained from the `UIDocumentBrowserViewController` when a
-        // `DocumentViewController` instance was presented.
-        return transitionController
-    }
-    
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        // The same zoom transition is needed when closing documents and returning to the `UIDocumentBrowserViewController`, which is why the the
-        // existing transition controller is returned here as well.
-        return transitionController
+        self.present(DocumentViewController(with: UIDocument(fileURL: documentURL)),
+                     animated: true,
+                     completion: nil)
     }
 }

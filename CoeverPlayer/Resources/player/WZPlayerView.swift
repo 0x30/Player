@@ -43,7 +43,7 @@ class WZPlayerView: UIView {
             self.configVLCPlayer()
         }
         
-        self.backgroundColor = UIColor.black
+        self.backgroundColor = UIColor.clear
     }
     
     required init?(coder: NSCoder) {
@@ -209,8 +209,7 @@ extension WZPlayerView: VLCMediaDelegate {
             .distinctUntilChanged()
             .bind(to: self.isPlayingBehaviorRelay)
             .disposed(by: disposeBag)
-        
-        
+
         self.vlcPlayerLayer = vlcPlayerLayer
     }
     

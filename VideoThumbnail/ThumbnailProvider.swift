@@ -13,8 +13,8 @@ class ThumbnailProvider: QLThumbnailProvider {
     
     override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
         
-        VLCMediaThumbnailer(media: VLCMedia(url: request.fileURL), andDelegate: VLCMediaThumbnailerDelegateProxy(block: { (image) in
-                    
+        ThumbnailerGenerator.provideThumbnail(documentURL: request.fileURL) { (image) in
+            
             guard let image = image else {
                 handler(nil, NSError(domain: "image error", code: 0, userInfo: nil))
                 return
@@ -30,8 +30,7 @@ class ThumbnailProvider: QLThumbnailProvider {
             })
                             
             handler(reply, nil)
-            
-        })).fetchThumbnail()
+        }
     }
     
     private func calculater(request: QLFileThumbnailRequest,image: UIImage) -> (contextSize: CGSize,drawRect:CGRect) {
@@ -58,39 +57,5 @@ class ThumbnailProvider: QLThumbnailProvider {
                        y: contextSize.height/2 - newImageSize.height/2,
                        width: newImageSize.width,
                        height: newImageSize.height))
-    }
-}
-
-
-class VLCMediaThumbnailerDelegateProxy: NSObject, VLCMediaThumbnailerDelegate {
-    
-    typealias VLCMediaThumbnailerDelegateProxyBlock = (_ image: CGImage?) -> Void
-    
-    private let block: VLCMediaThumbnailerDelegateProxyBlock
-    
-    /// 自管理 内存
-    private var _self: VLCMediaThumbnailerDelegateProxy?
-    
-    init(block: @escaping VLCMediaThumbnailerDelegateProxyBlock) {
-        
-        self.block = block
-        
-        super.init()
-        
-        _self = self
-    }
-    
-    func mediaThumbnailerDidTimeOut(_ mediaThumbnailer: VLCMediaThumbnailer!) {
-        
-        self.block(nil)
-        
-        _self = nil
-    }
-    
-    func mediaThumbnailer(_ mediaThumbnailer: VLCMediaThumbnailer!, didFinishThumbnail thumbnail: CGImage!) {
-        
-        self.block(thumbnail)
-        
-        _self = nil
     }
 }

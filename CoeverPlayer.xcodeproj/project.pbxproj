@@ -22,6 +22,8 @@
 		8649A49B24B1F3D7009B3439 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8649A49A24B1F3D7009B3439 /* QuickLookThumbnailing.framework */; };
 		8649A49E24B1F3D7009B3439 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */; };
 		8649A4A224B1F3D7009B3439 /* VideoThumbnail.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8649A49824B1F3D7009B3439 /* VideoThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		864B1FE424B5DBBF00B9F756 /* ThumbnailerGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B1FE224B5DBBF00B9F756 /* ThumbnailerGenerator.swift */; };
+		864B1FE624B611CD00B9F756 /* UIViewController+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B1FE524B611CD00B9F756 /* UIViewController+ex.swift */; };
 		866CA5B424B3681C000ADC66 /* WZPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA5B324B3681C000ADC66 /* WZPlayerView.swift */; };
 		866CA5B724B3686A000ADC66 /* URL+ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866CA5B624B3686A000ADC66 /* URL+ex.swift */; };
 		D38574F8985E1222413743FC /* Pods_CoeverPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6032D0F8DC440EA40F9F451 /* Pods_CoeverPlayerTests.framework */; };
@@ -94,6 +96,8 @@
 		8649A49A24B1F3D7009B3439 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
 		8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 		8649A49F24B1F3D7009B3439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		864B1FE224B5DBBF00B9F756 /* ThumbnailerGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailerGenerator.swift; sourceTree = "<group>"; };
+		864B1FE524B611CD00B9F756 /* UIViewController+ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ex.swift"; sourceTree = "<group>"; };
 		866CA5B324B3681C000ADC66 /* WZPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZPlayerView.swift; sourceTree = "<group>"; };
 		866CA5B624B3686A000ADC66 /* URL+ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ex.swift"; sourceTree = "<group>"; };
 		8D4A78CB8F11F33E6295256B /* Pods_CoeverPlayer_CoeverPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoeverPlayer_CoeverPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,7 @@
 		8636522324B2002F00265720 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				864B1FE124B5DB3B00B9F756 /* utils */,
 				866CA5B524B3685E000ADC66 /* extensions */,
 				866CA5B224B367FE000ADC66 /* player */,
 				8636522424B2004A00265720 /* CoeverPlayer-Bridging-Header.h */,
@@ -239,10 +244,18 @@
 		8649A49C24B1F3D7009B3439 /* VideoThumbnail */ = {
 			isa = PBXGroup;
 			children = (
+				864B1FE224B5DBBF00B9F756 /* ThumbnailerGenerator.swift */,
 				8649A49D24B1F3D7009B3439 /* ThumbnailProvider.swift */,
 				8649A49F24B1F3D7009B3439 /* Info.plist */,
 			);
 			path = VideoThumbnail;
+			sourceTree = "<group>";
+		};
+		864B1FE124B5DB3B00B9F756 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		866CA5B224B367FE000ADC66 /* player */ = {
@@ -257,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				866CA5B624B3686A000ADC66 /* URL+ex.swift */,
+				864B1FE524B611CD00B9F756 /* UIViewController+ex.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -558,6 +572,7 @@
 				8649A46924B1E88E009B3439 /* Document.swift in Sources */,
 				8649A46724B1E88E009B3439 /* DocumentViewController.swift in Sources */,
 				8649A46524B1E88E009B3439 /* DocumentBrowserViewController.swift in Sources */,
+				864B1FE624B611CD00B9F756 /* UIViewController+ex.swift in Sources */,
 				866CA5B724B3686A000ADC66 /* URL+ex.swift in Sources */,
 				8649A46324B1E88E009B3439 /* AppDelegate.swift in Sources */,
 			);
@@ -584,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8649A49E24B1F3D7009B3439 /* ThumbnailProvider.swift in Sources */,
+				864B1FE424B5DBBF00B9F756 /* ThumbnailerGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
